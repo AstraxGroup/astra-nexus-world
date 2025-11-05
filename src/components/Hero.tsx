@@ -1,13 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Globe2 } from "lucide-react";
-
 export const Hero = () => {
   const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(id)?.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
-
-  return (
-    <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 cosmic-background"></div>
       
       {/* Animated globe/orb in background */}
@@ -15,7 +14,9 @@ export const Hero = () => {
         <div className="relative w-[600px] h-[600px]">
           <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary to-secondary opacity-30 blur-3xl animate-pulse-glow"></div>
           <div className="absolute inset-0 rounded-full border-2 border-primary/30 animate-rotate-slow"></div>
-          <div className="absolute inset-8 rounded-full border border-secondary/20 animate-rotate-slow" style={{ animationDirection: 'reverse' }}></div>
+          <div className="absolute inset-8 rounded-full border border-secondary/20 animate-rotate-slow" style={{
+          animationDirection: 'reverse'
+        }}></div>
           <Globe2 className="absolute inset-0 m-auto w-32 h-32 text-primary animate-float" />
         </div>
       </div>
@@ -35,40 +36,21 @@ export const Hero = () => {
             </p>
           </div>
 
-          <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
-            Um movimento que une <span className="text-primary">tecnologia</span>, <span className="text-secondary">energia humana</span> e <span className="text-accent">consciência planetária</span> para construir o futuro.
+          <p className="text-lg text-foreground/80 max-w-3xl mx-auto leading-relaxed md:text-lg">A Astra New World é uma fundação global que conecta inovação, consciência e sustentabilidade criando polos educacionais e projetos reais no coração da Amazônia.<span className="text-primary">tecnologia</span>, <span className="text-secondary">energia humana</span> e <span className="text-accent">consciência planetária</span> para construir o futuro.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
-            <Button
-              onClick={() => scrollToSection('transparencia')}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground glow-primary group"
-              size="lg"
-            >
+            <Button onClick={() => scrollToSection('transparencia')} className="bg-primary hover:bg-primary/90 text-primary-foreground glow-primary group" size="lg">
               Portal de Transparência
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button
-              onClick={() => scrollToSection('projetos')}
-              className="bg-secondary hover:bg-secondary/90 text-secondary-foreground glow-secondary"
-              size="lg"
-            >
+            <Button onClick={() => scrollToSection('projetos')} className="bg-secondary hover:bg-secondary/90 text-secondary-foreground glow-secondary" size="lg">
               Projetos Ativos
             </Button>
-            <Button
-              onClick={() => scrollToSection('investidores')}
-              className="glass-panel hover:bg-white/10"
-              size="lg"
-              variant="outline"
-            >
+            <Button onClick={() => scrollToSection('investidores')} className="glass-panel hover:bg-white/10" size="lg" variant="outline">
               Seja um Investidor
             </Button>
-            <Button
-              onClick={() => scrollToSection('novo-mundo')}
-              className="glass-panel hover:bg-white/10"
-              size="lg"
-              variant="outline"
-            >
+            <Button onClick={() => scrollToSection('novo-mundo')} className="glass-panel hover:bg-white/10" size="lg" variant="outline">
               A Missão Astra
             </Button>
           </div>
@@ -81,6 +63,5 @@ export const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
