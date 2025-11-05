@@ -34,7 +34,7 @@ export const Hero = () => {
             </p>
           </div>
 
-          <p className="text-lg text-foreground/80 max-w-3xl mx-auto leading-relaxed md:text-lg font-bold">A Astra New World é uma fundação global que conecta inovação, consciência e sustentabilidade criando polos educacionais e projetos reais no coração da Amazônia.<span className="text-primary">consciência e sustentabilidade</span>, <span className="text-secondary">energia humana</span> e <span className="text-accent">consciência planetária</span> para construir o futuro.
+          <p className="text-lg max-w-3xl mx-auto leading-relaxed md:text-lg font-medium text-slate-50 text-center">A Astra New World é uma fundação global que conecta inovação, consciência e sustentabilidade criando polos educacionais e projetos reais no coração da Amazônia.<span className="text-primary">consciência e sustentabilidade</span>, <span className="text-secondary">energia humana</span> e <span className="text-accent">consciência planetária</span> para construir o futuro.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
