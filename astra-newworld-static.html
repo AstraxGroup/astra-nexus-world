@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fundação Astra New World - Transparência, Inovação e Consciência. Um movimento que une tecnologia, educação e energia humana para construir o futuro.">
+    <meta name="keywords" content="Astra New World, transparência, inovação, tecnologia, educação, fundação, blockchain">
+    <title>Fundação Astra New World - Uma Nova Era Começa Aqui</title>
+    
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Cosmic color palette */
+            --background: hsl(240, 20%, 6%);
+            --foreground: hsl(210, 100%, 98%);
+            --primary: hsl(220, 85%, 55%);
+            --primary-foreground: hsl(210, 100%, 98%);
+            --secondary: hsl(270, 60%, 45%);
+            --secondary-foreground: hsl(210, 100%, 98%);
+            --muted: hsl(240, 15%, 15%);
+            --muted-foreground: hsl(215, 25%, 70%);
+            --accent: hsl(210, 20%, 70%);
+            --border: hsl(240, 20%, 20%);
+        }
+
+        body {
+            font-family: 'Inter', 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--background);
+            color: var(--foreground);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Cosmic background */
+        .cosmic-background {
+            background: linear-gradient(135deg, hsl(240, 20%, 6%) 0%, hsl(270, 40%, 15%) 50%, hsl(220, 60%, 20%) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cosmic-background::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at center, hsla(270, 60%, 45%, 0.3) 0%, transparent 70%);
+            animation: nebula-float 20s ease-in-out infinite;
+        }
+
+        @keyframes nebula-float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(10%, 10%) scale(1.1); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        @keyframes rotate-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.75rem;
+        }
+
+        .holographic-card {
+            background: linear-gradient(135deg, rgba(66, 153, 225, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.75rem;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .holographic-card:hover {
+            transform: scale(1.02);
+        }
+
+        .glow-primary {
+            box-shadow: 0 0 30px hsla(220, 85%, 55%, 0.5);
+        }
+
+        .glow-secondary {
+            box-shadow: 0 0 30px hsla(270, 60%, 45%, 0.5);
+        }
+
+        .text-glow {
+            text-shadow: 0 0 20px currentColor;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--primary-foreground);
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+            color: var(--secondary-foreground);
+        }
+
+        .btn-outline {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--foreground);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-gradient {
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            padding: 1rem 0;
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--foreground);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 30px hsla(220, 85%, 55%, 0.5);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--muted-foreground);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            animation: fade-in 1s ease-out;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        section h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.25rem;
+            color: var(--muted-foreground);
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+
+        /* Grid Layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Cards */
+        .card {
+            padding: 2rem;
+            border-radius: 0.75rem;
+        }
+
+        .stat-card {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--foreground);
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+        }
+
+        /* Transaction Block */
+        .transaction-block {
+            display: flex;
+            gap: 1rem;
+            align-items: start;
+        }
+
+        .block-number {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+            box-shadow: 0 0 30px hsla(220, 85%, 55%, 0.5);
+        }
+
+        .transaction-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            flex: 1;
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--muted);
+            border-radius: 999px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: width 0.3s ease;
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.5rem;
+            color: var(--foreground);
+            font-size: 1rem;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        /* Footer */
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 4rem 0 2rem;
+            background: linear-gradient(to bottom, var(--background), hsla(240, 15%, 10%, 1));
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--muted-foreground);
+            font-size: 0.875rem;
+        }
+
+        /* Icons (using text symbols) */
+        .icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+        }
+
+        /* Status Badge */
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .badge-success {
+            background: rgba(34, 197, 94, 0.2);
+            color: rgb(34, 197, 94);
+        }
+
+        .badge-warning {
+            background: rgba(234, 179, 8, 0.2);
+            color: rgb(234, 179, 8);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+        }
+
+        /* Element Icons */
+        .element-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .element-earth { background: linear-gradient(135deg, #d97706, #f97316); }
+        .element-water { background: linear-gradient(135deg, #3b82f6, #22d3ee); }
+        .element-air { background: linear-gradient(135deg, #0ea5e9, #818cf8); }
+        .element-fire { background: linear-gradient(135deg, #ef4444, #ea580c); }
+        .element-ether { background: linear-gradient(135deg, #a855f7, #ec4899); }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#inicio" class="logo">
+                <div class="logo-icon">✨</div>
+                <div>
+                    <div style="font-size: 1.25rem; font-weight: 700;">ASTRA</div>
+                    <div style="font-size: 0.75rem; color: var(--primary);">NEW WORLD</div>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#transparencia">Transparência</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#novo-mundo">O Novo Mundo</a></li>
+                <li><a href="#investidores">Investidores</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero cosmic-background">
+        <div class="container">
+            <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+                <h1>
+                    UMA NOVA ERA <br>
+                    <span class="gradient-text">COMEÇA AQUI</span>
+                </h1>
+                <p style="font-size: 1.5rem; color: var(--muted-foreground); margin-bottom: 1rem;">
+                    Transparência. Inovação. Consciência. <br>
+                    Bem-vindo à <span style="color: var(--primary); font-weight: 600;">Fundação Astra New World</span>
+                </p>
+                <p style="font-size: 1.125rem; color: var(--foreground); opacity: 0.8; max-width: 900px; margin: 0 auto;">
+                    Um movimento que une <span style="color: var(--primary);">tecnologia</span>, 
+                    <span style="color: var(--secondary);">energia humana</span> e 
+                    <span style="color: var(--accent);">consciência planetária</span> para construir o futuro.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#transparencia" class="btn btn-primary glow-primary">Portal de Transparência →</a>
+                    <a href="#projetos" class="btn btn-secondary glow-secondary">Projetos Ativos</a>
+                    <a href="#investidores" class="btn btn-outline">Seja um Investidor</a>
+                    <a href="#novo-mundo" class="btn btn-outline">A Missão Astra</a>
+                </div>
+
+                <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border);">
+                    <p style="font-size: 0.875rem; color: var(--muted-foreground); font-style: italic;">
+                        "Cada ação é visível. Cada investimento é rastreável. <br>
+                        Cada pessoa envolvida torna-se parte viva desse novo sistema mundial."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transparency Portal -->
+    <section id="transparencia">
+        <div class="container">
+            <div style="max-width: 1200px; margin: 0 auto;">
+                <h2>Portal de <span style="color: var(--primary);" class="text-glow">Transparência</span></h2>
+                <p class="section-subtitle">
+                    Acompanhe em tempo real cada investimento. <br>
+                    Transparência total do código à execução.
+                </p>
+
+                <!-- Stats Grid -->
+                <div class="grid-4" style="margin-bottom: 3rem;">
+                    <div class="holographic-card card stat-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span class="icon">💰</span>
+                            <span style="color: #22c55e; font-size: 0.875rem; font-weight: 600;">+15%</span>
+                        </div>
+                        <div class="stat-value">R$ 2.5M</div>
+                        <div class="stat-label">Total Arrecadado</div>
+                    </div>
+                    <div class="holographic-card card stat-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span class="icon">👥</span>
+                            <span style="color: #22c55e; font-size: 0.875rem; font-weight: 600;">+23%</span>
+                        </div>
+                        <div class="stat-value">127</div>
+                        <div class="stat-label">Investidores Ativos</div>
+                    </div>
+                    <div class="holographic-card card stat-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span class="icon">🎯</span>
+                            <span style="color: #22c55e; font-size: 0.875rem; font-weight: 600;">+2</span>
+                        </div>
+                        <div class="stat-value">8</div>
+                        <div class="stat-label">Projetos Financiados</div>
+                    </div>
+                    <div class="holographic-card card stat-card">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span class="icon">📈</span>
+                            <span style="color: #22c55e; font-size: 0.875rem; font-weight: 600;">+5%</span>
+                        </div>
+                        <div class="stat-value">98%</div>
+                        <div class="stat-label">Impacto Social</div>
+                    </div>
+                </div>
+
+                <!-- Blockchain Transactions -->
+                <div class="glass-panel" style="padding: 2rem;">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 2rem;">Transações em Blockchain</h3>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <!-- Transaction 1 -->
+                        <div class="holographic-card" style="padding: 1.5rem;">
+                            <div class="transaction-block">
+                                <div class="block-number">#1</div>
+                                <div class="transaction-details">
+                                    <div>
+                                        <div style="font-size: 0.875rem; color: var(--muted-foreground);">Valor</div>
+                                        <div style="font-size: 1.125rem; font-weight: 700; color: var(--primary);">R$ 500.000</div>
+                                    </div>
+                                    <div>
+                                        <div style="font-size: 0.875rem; color: var(--muted-foreground);">Origem</div>
+                                        <div style="font-weight: 500;">Tech Corp Brasil</div>
+                                    </div>
+                                    <div>
+                                        <div style="font-size: 0.875rem; color: var(--muted-foreground);">Destino</div>
+                                        <div style="font-weight: 500;">Escola de Programação</div>
+                                    </div>
+                                    <div>
+                                        <div style="font-size: 0.875rem; color: var(--muted-foreground);">Data</div>
+                                        <div>15/01/2024</div>
+                                        <span class="badge badge-success">Educação</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Transaction 2 -->
+                        <div class="holographic-card" style="padding: 1.5rem;">
+                            <div class="transaction-block">
+                                <div class="block-number">#2</div>
+                                <div class="transaction-details">
+                                    <div>
+                                        <div style="font-size: 0.875rem; color: var(--muted-foreground);">Valor</div>
+                                        <div style="font-size: 1.125rem; font-weight: 700; color: var(--primary);">R$ 250.000</div>
+                                    </div>
+                                    <div>
+                                        <div style="font-size: 0.875rem; color: var(--muted-foreground);">Origem</div>
+                                        <div style="font-weight: 500;">Investidor Anônimo</div>
+                                    </div>
+                                    <div>
+                                        <div style="font-size: 0.875rem; color: var(--muted-foreground);">Destino</div>
+                                        <div style="font-weight: 500;">Polo Tecnológico</div>
+                                    </div>
+                                    <div>
+                                        <div style="font-size: 0.875rem; color: var(--muted-foreground);">Data</div>
+                                        <div>12/01/2024</div>
+                                        <span class="badge badge-warning">Infraestrutura</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Transaction 3 -->
+                        <div class="holographic-card" style="padding: 1.5rem;">
+                            <div class="transaction-block">
+                                <div class="block-number">#3</div>
+                                <div class="transaction-details">
+                                    <div>
+                                        <div style="font-size: 0.875rem; color: var(--muted-foreground);">Valor</div>
+                                        <div style="font-size: 1.125rem; font-weight: 700; color: var(--primary);">R$ 150.000</div>
+                                    </div>
+                                    <div>
+                                        <div style="font-size: 0.875rem; color: var(--muted-foreground);">Origem</div>
+                                        <div style="font-weight: 500;">Green Foundation</div>
+                                    </div>
+                                    <div>
+                                        <div style="font-size: 0.875rem; color: var(--muted-foreground);">Destino</div>
+                                        <div style="font-weight: 500;">Reflorestamento</div>
+                                    </div>
+                                    <div>
+                                        <div style="font-size: 0.875rem; color: var(--muted-foreground);">Data</div>
+                                        <div>08/01/2024</div>
+                                        <span class="badge badge-success">Sustentabilidade</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Transaction 4 -->
+                        <div class="holographic-card" style="padding: 1.5rem;">
+                            <div class="transaction-block">
+                                <div class="block-number">#4</div>
+                                <div class="transaction-details">
+                                    <div>
+                                        <div style="font-size: 0.875rem; color: var(--muted-foreground);">Valor</div>
+                                        <div style="font-size: 1.125rem; font-weight: 700; color: var(--primary);">R$ 75.000</div>
+                                    </div>
+                                    <div>
+                                        <div style="font-size: 0.875rem; color: var(--muted-foreground);">Origem</div>
+                                        <div style="font-weight: 500;">Maria Silva</div>
+                                    </div>
+                                    <div>
+                                        <div style="font-size: 0.875rem; color: var(--muted-foreground);">Destino</div>
+                                        <div style="font-weight: 500;">Hospital do Futuro</div>
+                                    </div>
+                                    <div>
+                                        <div style="font-size: 0.875rem; color: var(--muted-foreground);">Data</div>
+                                        <div>05/01/2024</div>
+                                        <span class="badge badge-warning">Saúde</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 2rem; text-align: center;">
+                        <a href="#investidores" class="btn btn-gradient glow-primary">Contribua com Transparência</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projetos">
+        <div class="container">
+            <div style="max-width: 1400px; margin: 0 auto;">
+                <h2>Projetos <span style="color: var(--secondary);" class="text-glow">Ativos</span></h2>
+                <p class="section-subtitle">
+                    Cada projeto é uma semente de transformação. <br>
+                    Acompanhe o impacto real de cada investimento.
+                </p>
+
+                <div class="grid-2">
+                    <!-- Project 1 -->
+                    <div class="holographic-card card">
+                        <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                            <div style="width: 64px; height: 64px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 30px hsla(220, 85%, 55%, 0.5); flex-shrink: 0; font-size: 2rem;">
+                                💻
+                            </div>
+                            <div style="flex: 1;">
+                                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                                    <h3 style="font-size: 1.5rem; font-weight: 700;">Escola de Programação</h3>
+                                    <span class="badge badge-success">Em andamento</span>
+                                </div>
+                                <p style="color: var(--muted-foreground);">Formação gratuita em desenvolvimento de software para jovens de Novo Mundo, MT</p>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <div style="display: flex; justify-between; font-size: 0.875rem; margin-bottom: 0.5rem;">
+                                <span style="color: var(--muted-foreground);">Progresso</span>
+                                <span style="color: var(--primary); font-weight: 600;">85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%;"></div>
+                            </div>
+                            <div style="display: flex; justify-between; font-size: 0.875rem; margin-top: 0.5rem;">
+                                <span style="color: var(--muted-foreground);">Arrecadado: <strong>R$ 510.000</strong></span>
+                                <span style="color: var(--muted-foreground);">Meta: <strong>R$ 600.000</strong></span>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 0.75rem;">
+                            <a href="#investidores" class="btn btn-gradient" style="flex: 1;">Apoiar este projeto</a>
+                            <a href="https://astranewworld.lovable.app/" target="_blank" class="btn btn-outline">🔗</a>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="holographic-card card">
+                        <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                            <div style="width: 64px; height: 64px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 30px hsla(220, 85%, 55%, 0.5); flex-shrink: 0; font-size: 2rem;">
+                                🖥️
+                            </div>
+                            <div style="flex: 1;">
+                                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                                    <h3 style="font-size: 1.5rem; font-weight: 700;">Polo Tecnológico Astra</h3>
+                                    <span class="badge badge-warning">Captando fundos</span>
+                                </div>
+                                <p style="color: var(--muted-foreground);">Centro de inovação com IA, blockchain e tecnologias emergentes</p>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <div style="display: flex; justify-between; font-size: 0.875rem; margin-bottom: 0.5rem;">
+                                <span style="color: var(--muted-foreground);">Progresso</span>
+                                <span style="color: var(--primary); font-weight: 600;">45%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 45%;"></div>
+                            </div>
+                            <div style="display: flex; justify-between; font-size: 0.875rem; margin-top: 0.5rem;">
+                                <span style="color: var(--muted-foreground);">Arrecadado: <strong>R$ 900.000</strong></span>
+                                <span style="color: var(--muted-foreground);">Meta: <strong>R$ 2.000.000</strong></span>
+                            </div>
+                        </div>
+                        <a href="#investidores" class="btn btn-gradient" style="width: 100%;">Apoiar este projeto</a>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="holographic-card card">
+                        <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                            <div style="width: 64px; height: 64px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 30px hsla(220, 85%, 55%, 0.5); flex-shrink: 0; font-size: 2rem;">
+                                ❤️
+                            </div>
+                            <div style="flex: 1;">
+                                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                                    <h3 style="font-size: 1.5rem; font-weight: 700;">Hospital do Futuro</h3>
+                                    <span class="badge badge-warning">Captando fundos</span>
+                                </div>
+                                <p style="color: var(--muted-foreground);">Assistência médica avançada com telemedicina e equipamentos de última geração</p>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <div style="display: flex; justify-between; font-size: 0.875rem; margin-bottom: 0.5rem;">
+                                <span style="color: var(--muted-foreground);">Progresso</span>
+                                <span style="color: var(--primary); font-weight: 600;">30%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 30%;"></div>
+                            </div>
+                            <div style="display: flex; justify-between; font-size: 0.875rem; margin-top: 0.5rem;">
+                                <span style="color: var(--muted-foreground);">Arrecadado: <strong>R$ 1.500.000</strong></span>
+                                <span style="color: var(--muted-foreground);">Meta: <strong>R$ 5.000.000</strong></span>
+                            </div>
+                        </div>
+                        <a href="#investidores" class="btn btn-gradient" style="width: 100%;">Apoiar este projeto</a>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="holographic-card card">
+                        <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                            <div style="width: 64px; height: 64px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 30px hsla(220, 85%, 55%, 0.5); flex-shrink: 0; font-size: 2rem;">
+                                🌿
+                            </div>
+                            <div style="flex: 1;">
+                                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                                    <h3 style="font-size: 1.5rem; font-weight: 700;">Reflorestamento Inteligente</h3>
+                                    <span class="badge badge-success">Em andamento</span>
+                                </div>
+                                <p style="color: var(--muted-foreground);">Recuperação de áreas degradadas com monitoramento via satélite e IoT</p>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <div style="display: flex; justify-between; font-size: 0.875rem; margin-bottom: 0.5rem;">
+                                <span style="color: var(--muted-foreground);">Progresso</span>
+                                <span style="color: var(--primary); font-weight: 600;">70%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 70%;"></div>
+                            </div>
+                            <div style="display: flex; justify-between; font-size: 0.875rem; margin-top: 0.5rem;">
+                                <span style="color: var(--muted-foreground);">Arrecadado: <strong>R$ 560.000</strong></span>
+                                <span style="color: var(--muted-foreground);">Meta: <strong>R$ 800.000</strong></span>
+                            </div>
+                        </div>
+                        <a href="#investidores" class="btn btn-gradient" style="width: 100%;">Apoiar este projeto</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New World Philosophy -->
+    <section id="novo-mundo" style="background: linear-gradient(to bottom, var(--background), hsla(270, 40%, 10%, 0.3), var(--background));">
+        <div class="container">
+            <div style="max-width: 1200px; margin: 0 auto;">
+                <h2>O <span class="gradient-text text-glow">Novo Mundo</span></h2>
+                <p class="section-subtitle">
+                    A conexão entre os <span style="color: var(--primary); font-weight: 600;">cinco elementos</span> fundamentais que sustentam nossa visão de transformação planetária.
+                </p>
+
+                <!-- Central Philosophy -->
+                <div class="glass-panel" style="padding: 3rem; text-align: center; margin-bottom: 3rem;">
+                    <div style="font-size: 4rem; margin-bottom: 1rem;">✨</div>
+                    <blockquote style="font-size: 1.75rem; font-style: italic; margin-bottom: 1.5rem; line-height: 1.5;">
+                        "O Novo Mundo nasce quando a consciência humana se une à tecnologia para servir à vida."
+                    </blockquote>
+                    <p style="font-size: 1.125rem; color: var(--muted-foreground); max-width: 800px; margin: 0 auto;">
+                        A ASTRA NEW WORLD não é apenas uma fundação. É um <span style="color: var(--primary);">portal para o futuro</span>, um código de transparência universal e uma luz guiando a humanidade para um novo nível de consciência.
+                    </p>
+                </div>
+
+                <!-- Elements -->
+                <div class="grid-3">
+                    <div class="holographic-card card">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <div class="element-icon element-earth">⛰️</div>
+                            <div>
+                                <h3 style="font-size: 1.5rem; font-weight: 700;">TERRA</h3>
+                                <p style="font-size: 0.875rem; color: var(--primary); font-weight: 600;">Estrutura e Construção</p>
+                            </div>
+                        </div>
+                        <p style="color: var(--muted-foreground);">
+                            A base sólida que sustenta toda transformação. Representa os projetos físicos e a infraestrutura do novo mundo.
+                        </p>
+                    </div>
+
+                    <div class="holographic-card card">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <div class="element-icon element-water">💧</div>
+                            <div>
+                                <h3 style="font-size: 1.5rem; font-weight: 700;">ÁGUA</h3>
+                                <p style="font-size: 0.875rem; color: var(--primary); font-weight: 600;">Fluidez e Cooperação</p>
+                            </div>
+                        </div>
+                        <p style="color: var(--muted-foreground);">
+                            O fluxo contínuo de recursos e ideias. Representa a transparência e a capacidade de adaptação às mudanças.
+                        </p>
+                    </div>
+
+                    <div class="holographic-card card">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <div class="element-icon element-air">💨</div>
+                            <div>
+                                <h3 style="font-size: 1.5rem; font-weight: 700;">AR</h3>
+                                <p style="font-size: 0.875rem; color: var(--primary); font-weight: 600;">Conhecimento e Educação</p>
+                            </div>
+                        </div>
+                        <p style="color: var(--muted-foreground);">
+                            A propagação do saber e da consciência. Representa os projetos educacionais e a disseminação de informação.
+                        </p>
+                    </div>
+
+                    <div class="holographic-card card">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <div class="element-icon element-fire">🔥</div>
+                            <div>
+                                <h3 style="font-size: 1.5rem; font-weight: 700;">FOGO</h3>
+                                <p style="font-size: 0.875rem; color: var(--primary); font-weight: 600;">Energia e Inovação</p>
+                            </div>
+                        </div>
+                        <p style="color: var(--muted-foreground);">
+                            A força transformadora que impulsiona mudanças. Representa a tecnologia, a paixão e o espírito empreendedor.
+                        </p>
+                    </div>
+
+                    <div class="holographic-card card">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <div class="element-icon element-ether">✨</div>
+                            <div>
+                                <h3 style="font-size: 1.5rem; font-weight: 700;">ÉTER</h3>
+                                <p style="font-size: 0.875rem; color: var(--primary); font-weight: 600;">Consciência e Conexão</p>
+                            </div>
+                        </div>
+                        <p style="color: var(--muted-foreground);">
+                            A força invisível que une tudo. Representa a consciência coletiva e a conexão espiritual entre todos os envolvidos.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Mission -->
+                <div style="text-align: center; margin-top: 3rem;">
+                    <div style="display: inline-block; padding: 0.75rem 1.5rem; border-radius: 999px; background: linear-gradient(90deg, hsla(220, 85%, 55%, 0.2), hsla(270, 60%, 45%, 0.2)); border: 1px solid hsla(220, 85%, 55%, 0.3); margin-bottom: 1rem;">
+                        <p style="font-size: 0.875rem; font-weight: 600; color: var(--primary); text-transform: uppercase; letter-spacing: 0.05em;">
+                            Nossa Missão
+                        </p>
+                    </div>
+                    <p style="font-size: 1.25rem; max-width: 900px; margin: 0 auto; line-height: 1.6;">
+                        Construir um ecossistema global onde <span style="color: var(--primary); font-weight: 600;">tecnologia</span>, 
+                        <span style="color: var(--secondary); font-weight: 600;">educação</span> e 
+                        <span style="color: var(--accent); font-weight: 600;">energia humana</span> convergem para criar um futuro sustentável, transparente e evolutivo — começando por Novo Mundo, Mato Grosso, e expandindo para o planeta.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investors Form -->
+    <section id="investidores">
+        <div class="container">
+            <div style="max-width: 1200px; margin: 0 auto;">
+                <h2>Investidores & <span style="color: var(--accent);" class="text-glow">Parceiros</span></h2>
+                <p class="section-subtitle">
+                    Torne-se parte da construção do Novo Mundo. <br>
+                    Cada contribuição é auditável e registrada publicamente.
+                </p>
+
+                <div class="grid-2">
+                    <!-- Benefits -->
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div class="holographic-card card">
+                            <div style="display: flex; gap: 1rem;">
+                                <div style="width: 48px; height: 48px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 30px hsla(220, 85%, 55%, 0.5); flex-shrink: 0; font-size: 1.5rem;">
+                                    🛡️
+                                </div>
+                                <div>
+                                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem;">Transparência Total</h3>
+                                    <p style="color: var(--muted-foreground);">
+                                        Cada contribuição é auditável e registrada publicamente em blockchain. Você acompanha em tempo real onde e como seus recursos estão sendo aplicados.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="holographic-card card">
+                            <div style="display: flex; gap: 1rem;">
+                                <div style="width: 48px; height: 48px; background: linear-gradient(135deg, var(--secondary), var(--accent)); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 30px hsla(270, 60%, 45%, 0.5); flex-shrink: 0; font-size: 1.5rem;">
+                                    📈
+                                </div>
+                                <div>
+                                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem;">Impacto Mensurável</h3>
+                                    <p style="color: var(--muted-foreground);">
+                                        Relatórios detalhados de impacto social, ambiental e econômico. Você verá as vidas transformadas e o futuro sendo construído.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="holographic-card card">
+                            <div style="display: flex; gap: 1rem;">
+                                <div style="width: 48px; height: 48px; background: linear-gradient(135deg, var(--accent), var(--primary)); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.5rem;">
+                                    🚀
+                                </div>
+                                <div>
+                                    <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem;">Acesso Exclusivo</h3>
+                                    <p style="color: var(--muted-foreground);">
+                                        Participe de eventos, encontros com a equipe e tenha voz ativa nas decisões estratégicas da fundação.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form -->
+                    <div class="glass-panel" style="padding: 2rem;">
+                        <form id="investorForm">
+                            <div class="form-group">
+                                <label class="form-label" for="name">Nome / Empresa *</label>
+                                <input type="text" id="name" class="form-input" placeholder="Seu nome ou razão social" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="email">E-mail *</label>
+                                <input type="email" id="email" class="form-input" placeholder="seu@email.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="country">País *</label>
+                                <input type="text" id="country" class="form-input" placeholder="Brasil" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="amount">Valor Estimado de Contribuição</label>
+                                <input type="text" id="amount" class="form-input" placeholder="R$ 50.000">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="project">Projeto de Interesse</label>
+                                <select id="project" class="form-input">
+                                    <option value="">Selecione um projeto</option>
+                                    <option value="escola">Escola de Programação</option>
+                                    <option value="polo">Polo Tecnológico</option>
+                                    <option value="hospital">Hospital do Futuro</option>
+                                    <option value="reflorestamento">Reflorestamento</option>
+                                    <option value="geral">Fundação em Geral</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn btn-gradient glow-primary" style="width: 100%; font-size: 1.125rem;">
+                                Torne-se parte do Novo Mundo
+                            </button>
+
+                            <p style="font-size: 0.75rem; color: var(--muted-foreground); text-align: center; margin-top: 1rem;">
+                                * Campos obrigatórios. Seus dados serão tratados com total privacidade e segurança.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div style="max-width: 1200px; margin: 0 auto;">
+                <div class="footer-grid">
+                    <!-- Brand -->
+                    <div>
+                        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                            <div class="logo-icon">✨</div>
+                            <div>
+                                <div style="font-size: 1.25rem; font-weight: 700;">ASTRA</div>
+                                <div style="font-size: 0.75rem; color: var(--primary);">NEW WORLD</div>
+                            </div>
+                        </div>
+                        <p style="font-size: 0.875rem; color: var(--muted-foreground); line-height: 1.6;">
+                            Construindo o Novo Mundo com transparência e propósito. Um ecossistema onde tecnologia e consciência se unem.
+                        </p>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div>
+                        <h4 style="font-size: 1.125rem; font-weight: 700; margin-bottom: 1rem;">Links Rápidos</h4>
+                        <nav style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <a href="#inicio" style="color: var(--muted-foreground); text-decoration: none;">Início</a>
+                            <a href="#transparencia" style="color: var(--muted-foreground); text-decoration: none;">Portal de Transparência</a>
+                            <a href="#projetos" style="color: var(--muted-foreground); text-decoration: none;">Projetos</a>
+                            <a href="#novo-mundo" style="color: var(--muted-foreground); text-decoration: none;">O Novo Mundo</a>
+                            <a href="#investidores" style="color: var(--muted-foreground); text-decoration: none;">Investidores</a>
+                        </nav>
+                    </div>
+
+                    <!-- Contact -->
+                    <div>
+                        <h4 style="font-size: 1.125rem; font-weight: 700; margin-bottom: 1rem;">Contato</h4>
+                        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                            <a href="mailto:contato@astranewworld.org" style="display: flex; align-items: center; gap: 0.75rem; color: var(--muted-foreground); text-decoration: none;">
+                                <span>📧</span>
+                                <span style="font-size: 0.875rem;">contato@astranewworld.org</span>
+                            </a>
+                            <a href="tel:+556599999999" style="display: flex; align-items: center; gap: 0.75rem; color: var(--muted-foreground); text-decoration: none;">
+                                <span>📞</span>
+                                <span style="font-size: 0.875rem;">+55 (65) 9999-9999</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>© 2024 Fundação Astra New World. Todos os direitos reservados.</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.75rem;">Transparência. Inovação. Consciência.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Form submission
+        document.getElementById('investorForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const country = document.getElementById('country').value;
+            
+            if (!name || !email || !country) {
+                alert('Por favor, preencha todos os campos obrigatórios.');
+                return;
+            }
+            
+            alert('Obrigado! Entraremos em contato em breve para iniciar sua jornada no Novo Mundo.');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Smooth scroll for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
