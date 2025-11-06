@@ -23,7 +23,7 @@ export const Hero = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-5xl mx-auto text-center space-y-8">
           <div className="space-y-4 animate-fade-in">
-            <h1 className="text-6xl md:text-8xl font-bold text-glow">
+            <h1 className="text-6xl md:text-8xl font-bold">
               UMA NOVA ERA <br />
               <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
                 COMEÇA AQUI
